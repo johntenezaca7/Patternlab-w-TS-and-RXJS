@@ -36,7 +36,16 @@ _Note: You must have all of the prerequisites first_
 
 ## Installing
 
+`git clone [repo]`
+`cd [repo]`
 `npm install`
+`npm install -g gulp-cli`
+`npm run patternlab:build`
+`npm run patternlab:serve`
+
+In a seperate terminal run to compile SCSS
+
+`gulp`
 
 ### What's Included
 

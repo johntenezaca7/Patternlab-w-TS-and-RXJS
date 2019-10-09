@@ -1,0 +1,9 @@
+$atom: "dot";
+
+.#{$atom} {
+  width: 4rem;
+  height: 4rem;
+  background-color: $default-base;
+  border-radius: 100%;
+  box-shadow: $soft-shadow;
+}

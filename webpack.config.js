@@ -27,7 +27,7 @@ module.exports = env => {
         //NOTE: This name can be changed, if so, make sure to update _meta/01-foot.mustache
         "js/pl-source": globby
           .sync([
-            resolve(__dirname, `${plConfig.paths.source.js}**/*.js`),
+            resolve(__dirname, `${plConfig.paths.source.js}**/*.*`),
             "!**/*.test.js"
           ])
           .map(function(filePath) {
@@ -76,12 +76,6 @@ module.exports = env => {
             context: resolve(plConfig.paths.source.fonts),
             from: "./*",
             to: resolve(plConfig.paths.public.fonts)
-          },
-          {
-            // Copy all css from source to public
-            context: resolve(plConfig.paths.source.css),
-            from: "./*.css",
-            to: resolve(plConfig.paths.public.css)
           },
           {
             // Styleguide Copy everything but css
@@ -169,8 +163,16 @@ module.exports = env => {
                 }
               }
             ]
-          }
+          },
+          {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /(node_modules|bower_components)/,
+          },
         ]
+      },
+      resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ],
       }
     },
     customization(env)

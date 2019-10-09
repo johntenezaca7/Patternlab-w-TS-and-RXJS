@@ -1,10 +1,15 @@
-const {getIfUtils} = require('webpack-config-utils');
+const webpack = require("webpack");
+const { getIfUtils } = require("webpack-config-utils");
+const { resolve } = require("path");
+const globby = require("globby");
+const plConfig = require("../../patternlab-config.json");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = env => {
-    const {ifProd, ifDev} = getIfUtils(env);
-
-    const app = {
-        //Custom webpack configuration goes here
-    }
+    const { ifProduction, ifDevelopment } = getIfUtils(env);
+    const appNamespace = plConfig.app.namespace
+        ? `$ns:${plConfig.app.namespace};`
+        : ``;
+    const app = {}
     return app;
- }
+};

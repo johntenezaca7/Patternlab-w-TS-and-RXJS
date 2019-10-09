@@ -36,7 +36,7 @@
             "js": "./source/js/",
             "images": "./source/images/",
             "fonts": "./source/fonts/",
-            "css": "./source/css/"
+            "css": "./source/scss/"
         },
         "public": {
             "root": "./public/",
