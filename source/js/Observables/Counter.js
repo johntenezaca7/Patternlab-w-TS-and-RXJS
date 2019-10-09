@@ -11,5 +11,4 @@ const Counter = new Observable(subscriber => {
 });
 
 
-
 export { Counter };
